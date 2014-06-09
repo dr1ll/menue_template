@@ -1,12 +1,12 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
 
-###########################################
-# - menue_template.py -
-# For Linux / Python 2.7.3 / standard-window
-# - template for an cli-menue
-# - works with vars
-###########################################
+##################################################
+# menue_template.py                              # 
+# For Linux / Python 2.7.3 / standard-windowsize #
+# - template for an cli-menue                    #
+# - works with vars, insert your defs            #
+##################################################
 
 __author__ = "dr1ll"
 __copyright__ = "GPL 2013"
@@ -17,25 +17,26 @@ import os
 
 ### menue-vars
 
-# count your versions here:
-version = "0.0.3"
+# Count your versions here:
+version = "0.0.4"
 
 # How many columns do you have for default (Standard=80)?
 columns = 80
 
-# name oy your app, showed in first line
+# Name oy your app, showed in first line
 title = "Some Menue for Linux v"
 
-# insert some hints
+# Insert some hints
 hint1 = "# This is an empty template"
 hint2 = "[Enter]: More options"
 hint3 = "[Q]: Quit"
 
 
-# enter the name of functions from your py-script instead
+# Enter the name of functions from your py-script instead
 
 text_for_functions = []
-# functiontext1
+
+# Functiontext1
 text_for_functions.append("function1")
 # 2
 text_for_functions.append("")
@@ -167,7 +168,7 @@ def function17():
 
 
 def function18():
-    print"function10 is empty"
+    print"function18 is empty"
 
 
 def function19():
@@ -191,6 +192,14 @@ def menue2():
         print(str(i)+" - "+text_for_functions[i+10])
     print
     footer()
+
+
+#def menue3():
+#   header()
+#   for i in range(10):
+#       print(str(i)+" - "+text_for_functions[i+20])
+#   print
+#   footer()
 
 
 if __name__ == '__main__':
