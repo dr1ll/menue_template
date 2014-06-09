@@ -3,7 +3,7 @@
 
 ##################################################
 # menue_template.py                              # 
-# For Linux / Python 2.7.3 / standard-windowsize #
+# For Linux / Python 2.7.3                       #
 # - template for an cli-menue                    #
 # - works with vars, insert your defs            #
 ##################################################
@@ -15,68 +15,175 @@ __license__ = "GPL v3 Plus"
 
 import os
 
-### menue-vars
+### Change these vars for your menue:
 
 # Count your versions here:
-version = "0.0.4"
+versionnumber = "0.0.5"
 
-# How many columns do you have for default (Standard=80)?
+# How many columns do you have in your window for default (Standard=80)?
 columns = 80
 
-# Name oy your app, showed in first line
-title = "Some Menue for Linux v"
+# Name oy your app, this is shown in the first line
+title = "Some Menue for Linux"
 
 # Insert some hints
 hint1 = "# This is an empty template"
 hint2 = "[Enter]: More options"
 hint3 = "[Q]: Quit"
 
-
-# Enter the name of functions from your py-script instead
-
+# Don't change:
+version = " v"+versionnumber
 text_for_functions = []
+emptyfunction = "This function is empty"
 
-# Functiontext1
-text_for_functions.append("function1")
-# 2
+
+### Inserting your functionality:
+
+# Insert: to os.system('[name of your intern def/function etc. or execute somescript.py]')
+# Insert: text_for_functions.append("[String to decribe your function etc.]")
+# Remove: print(emptyfunction)
+
+def function1():
+    os.system('python /home/user/menue_template.py')
+
+
+text_for_functions.append("Noch einmal...")
+
+
+def function2():
+    print(emptyfunction)
+
+
 text_for_functions.append("")
-# 3
+
+
+def function3():
+    print(emptyfunction)
+
+
 text_for_functions.append("")
-# 4
+
+
+def function4():
+    print(emptyfunction)
+
+
 text_for_functions.append("")
-# 5
+
+
+def function5():
+    print(emptyfunction)
+
+
 text_for_functions.append("")
-# 6
+
+
+def function6():
+    print(emptyfunction)
+
+
 text_for_functions.append("")
-# 7
+
+
+def function7():
+    print(emptyfunction)
+
+
 text_for_functions.append("")
-# 8
+
+
+def function8():
+    print(emptyfunction)
+
+
 text_for_functions.append("")
-# 9
+
+
+def function9():
+    print(emptyfunction)
+
+
 text_for_functions.append("")
-# 10
+
+
+def function10():
+    print(emptyfunction)
+
+
 text_for_functions.append("function10")
-# 11
-text_for_functions.append("function11")
-# 12
+
+
+def function11():
+    print(emptyfunction)
+
+
 text_for_functions.append("")
-# 13
+
+
+def function12():
+    print(emptyfunction)
+
+
 text_for_functions.append("")
-# 14
+
+
+def function13():
+    print(emptyfunction)
+
+
 text_for_functions.append("")
-# 15
+
+
+def function14():
+    print(emptyfunction)
+
+
 text_for_functions.append("")
-# 16
+
+
+def function15():
+    print(emptyfunction)
+
+
 text_for_functions.append("")
-# 17
+
+
+def function16():
+    print(emptyfunction)
+
+
 text_for_functions.append("")
-# 18
+
+
+def function17():
+    print(emptyfunction)
+
+
 text_for_functions.append("")
-# 19
+
+
+def function18():
+    print(emptyfunction)
+
+
 text_for_functions.append("")
-# 20
+
+
+def function19():
+    print(emptyfunction)
+
+
+text_for_functions.append("")
+
+
+def function20():
+    print(emptyfunction)
+
+
 text_for_functions.append("function20")
 
+
+#!!! STOP inserting stuff here !!!
 
 
 def header():
@@ -99,92 +206,13 @@ def choiceinput():
     return answer
 
 
-def function1():
-    print"function1 is empty"
-
-
-def function2():
-    print"function2 is empty"
-
-
-def function3():
-    print"function3 is empty"
-
-
-def function4():
-    print"function4 is empty"
-
-
-def function5():
-    print"function5 is empty"
-
-
-def function6():
-    print"function6 is empty"
-
-
-def function7():
-    print"function7 is empty"
-
-
-def function8():
-    print"function8 is empty"
-
-
-def function9():
-    print"function9 is empty"
-
-
-def function10():
-    print"function10 is empty"
-
-
-def function11():
-    print"function11 is empty"
-
-
-def function12():
-    print"function12 is empty"
-
-
-def function13():
-    print"function13 is empty"
-
-
-def function14():
-    print"function14 is empty"
-
-
-def function15():
-    print"function15 is empty"
-
-
-def function16():
-    print"function16 is empty"
-
-
-def function17():
-    print"function17 is empty"
-
-
-def function18():
-    print"function18 is empty"
-
-
-def function19():
-    print"function19 is empty"
-
-
-def function20():
-    print"function20 is empty"
-
-
 def menue1():
     header()
     for i in range(10):
         print(str(i)+" - "+text_for_functions[i])
     print
     footer()
+
 
 def menue2():
     header()
@@ -213,12 +241,11 @@ if __name__ == '__main__':
         counter += 1
         if which_menue == 1:
             menue1()
-            menue_counter = int((which_menue*10)-10)
         elif which_menue == 2:
-            menue_counter = int((which_menue*10)-10)
             menue2()
 #       elif which_menue == 3:
 #           menue3()
+        menue_counter = int((which_menue*10)-10)
         choice = choiceinput()
         choices = range(10)
         choice_control = 999
@@ -239,6 +266,6 @@ if __name__ == '__main__':
 #           elif which_menue == 3:
 #               which_menue = 1
             counter = 0
+    os.system('clear')
     print(">>> end\n")
-
 # end
