@@ -18,16 +18,16 @@ import os
 ### menue-vars
 
 # count your versions here:
-version = "0.0.2"
+version = "0.0.3"
 
 # How many columns do you have for default (Standard=80)?
 columns = 80
 
 # name oy your app, showed in first line
-title = "Some Menue for Linux version"
+title = "Some Menue for Linux v"
 
 # insert some hints
-hint1 = "# This is an empyty template"
+hint1 = "# This is an empty template"
 hint2 = "[Enter]: More options"
 hint3 = "[Q]: Quit"
 
@@ -35,48 +35,47 @@ hint3 = "[Q]: Quit"
 # enter the name of functions from your py-script instead
 
 text_for_functions = []
-# text0
-text_for_functions.append("Editor")
-# text1
-text_for_functions.append("Hamster")
-# text2
-text_for_functions.append("Sonstwas")
-# text3
-text_for_functions.append("Irgendwas")
-# text4
-text_for_functions.append("Something")
-# text5
+# functiontext1
+text_for_functions.append("function1")
+# 2
 text_for_functions.append("")
-# text6
+# 3
 text_for_functions.append("")
-# text7
+# 4
 text_for_functions.append("")
-# text8
+# 5
 text_for_functions.append("")
-# text9
+# 6
 text_for_functions.append("")
-# text10
+# 7
 text_for_functions.append("")
-# text11
+# 8
 text_for_functions.append("")
-# text12
+# 9
 text_for_functions.append("")
-# text13
+# 10
+text_for_functions.append("function10")
+# 11
+text_for_functions.append("function11")
+# 12
 text_for_functions.append("")
-# text14
+# 13
 text_for_functions.append("")
-# text15
+# 14
 text_for_functions.append("")
-# text16
+# 15
 text_for_functions.append("")
-# text17
+# 16
 text_for_functions.append("")
-# text18
+# 17
 text_for_functions.append("")
-# text19
+# 18
 text_for_functions.append("")
-# text20
+# 19
 text_for_functions.append("")
+# 20
+text_for_functions.append("function20")
+
 
 
 def header():
@@ -95,7 +94,7 @@ def footer():
 
 
 def choiceinput():
-    answer = str(raw_input("Your choice (1-9):\n\n>>> "))
+    answer = str(raw_input("Your choice (0-9):\n\n>>> "))
     return answer
 
 
@@ -205,46 +204,32 @@ if __name__ == '__main__':
         counter += 1
         if which_menue == 1:
             menue1()
+            menue_counter = int((which_menue*10)-10)
         elif which_menue == 2:
-            menue_counter = 10
+            menue_counter = int((which_menue*10)-10)
             menue2()
-'''
-# Add another menue:
-        elif which_menue == 3:
-            menue_counter = 20
-            menue3()
-'''
+#       elif which_menue == 3:
+#           menue3()
         choice = choiceinput()
-
-        if choice == "0":
-            function1()
-        elif choice == "1":
-            function2()
-        elif choice == "2":
-            function3()
-        elif choice == "3":
-            function4()
-        elif choice == "4":
-            function5()
-        elif choice == "5":
-            function6()
-        elif choice == "6":
-            function7()
-        elif choice == "7":
-            function8()
-        elif choice == "8":
-            function9()
-        elif choice == "9":
-            function10()
-        elif choice == "Q" or choice == "q":
+        choices = range(10)
+        choice_control = 999
+        if choice == "0" or choice == "1" or choice == "2" or choice == "3" or choice == "4":
+            choice_control = int(choice)
+        if choice == "5" or choice == "6" or choice == "7" or choice == "8" or choice == "9":
+            choice_control = int(choice)
+        if choice_control in range(10):
+            function_string = 'function'+str(choice_control+1+menue_counter)
+            locals()[function_string]()
+        if choice == "Q" or choice == "q":
             goon = False
         elif choice == "":
             if which_menue == 1:
                 which_menue = 2
-                counter = 0
             elif which_menue == 2:
                 which_menue = 1
-                counter = 0
-    print("\n>>> end\n")
+#           elif which_menue == 3:
+#               which_menue = 1
+            counter = 0
+    print(">>> end\n")
 
 # end
