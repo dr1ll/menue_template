@@ -18,7 +18,7 @@ import os
 ### Change these vars for your menue:
 
 # Count your versions here:
-versionnumber = "0.0.5"
+versionnumber = "1.0"
 
 # How many columns do you have in your window for default (Standard=80)?
 columns = 80
@@ -235,7 +235,7 @@ if __name__ == '__main__':
     goon = True
     which_menue = 1
     counter = 0
-    while goon == True:
+    while goon:
         if counter > 0:
             raw_input("\nPress Enter to continue!")
         counter += 1
